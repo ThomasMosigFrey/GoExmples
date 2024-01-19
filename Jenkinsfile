@@ -1,6 +1,9 @@
 pipeline {
     agent any
-    tool name: 'Go_1.21.6', type: 'go'
+
+    tool {
+        go 'Go_Go_1.21.6', type: 'go'
+    }
 
     stages {
         stage('compile hello') {
