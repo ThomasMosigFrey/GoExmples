@@ -6,20 +6,32 @@ pipeline {
     }
 
     stages {
+
         stage('compile hello') {
             steps {
-                sh "cd hello; go build"
+                dir('hello') {
+                    sh "go build"
+                    archiveArtifacts artifacts: 'hello', followSymlinks: false
+                }
             }
         }
+
         stage('compile helloserver') {
             steps {
-                sh "cd helloserver; go build"
+                dir('helloserver') {
+                    sh "go build"
+                    archiveArtifacts artifacts: 'helloserver', followSymlinks: false
+                }
             }
         }
+
         stage('compile outyet') {
             steps {
-                sh "cd outyet; go build"
+                dir('outyet') {
+                    sh "go build"
+                    archiveArtifacts artifacts: 'outyet', followSymlinks: false
+                }
             }
         }
-     }
+    }
 }
