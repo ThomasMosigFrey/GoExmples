@@ -1,7 +1,7 @@
 pipeline {
     agent any
 
-    tool {
+    tools {
         go 'Go_Go_1.21.6', type: 'go'
     }
 
