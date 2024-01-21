@@ -4,17 +4,17 @@ pipeline {
     stages {
         stage('compile hello') {
             steps {
-                sh "cd hello; gi build"
+                sh "cd hello; go build"
             }
         }
         stage('compile helloserver') {
             steps {
-                sh "cd helloserver; gi build"
+                sh "cd helloserver; go build"
             }
         }
         stage('compile outyet') {
             steps {
-                sh "cd outyet; gi build"
+                sh "cd outyet; go build"
             }
         }
      }
